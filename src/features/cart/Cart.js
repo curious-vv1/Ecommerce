@@ -13,7 +13,10 @@ export default function Cart() {
   const items = useSelector(selectItems);
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) =>
+      Math.round(item.price * (1 - item.discountPercentage / 100)) *
+        item.quantity +
+      amount,
     0
   );
   const dispatch = useDispatch();

@@ -13,7 +13,10 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
-import { createOrderAsync, selectCurrentOrder } from "../features/order/orderSlice";
+import {
+  createOrderAsync,
+  selectCurrentOrder,
+} from "../features/order/orderSlice";
 
 function Checkout() {
   const items = useSelector(selectItems);
@@ -21,7 +24,10 @@ function Checkout() {
   const currentOrder = useSelector(selectCurrentOrder);
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) =>
+      Math.round(item.price * (1 - item.discountPercentage / 100)) *
+        item.quantity +
+      amount,
     0
   );
   const dispatch = useDispatch();
@@ -47,12 +53,11 @@ function Checkout() {
         user,
         selectedAddress,
         paymentMethod,
-        status:"pending"
+        status: "pending",
       };
       console.log(order);
       dispatch(createOrderAsync(order));
-    }
-    else{
+    } else {
       alert("Enter Address and Add Payment Method");
     }
   };
@@ -75,7 +80,12 @@ function Checkout() {
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
-      {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`} replace={true}></Navigate>}
+      {currentOrder && (
+        <Navigate
+          to={`/order-success/${currentOrder.id}`}
+          replace={true}
+        ></Navigate>
+      )}
       <div className="mx-auto mt-2 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
@@ -120,6 +130,11 @@ function Checkout() {
                             id="name"
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.name && (
+                            <p className="text-red-500">
+                              {errors.name.message}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -143,6 +158,11 @@ function Checkout() {
                             type="email"
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.email && (
+                            <p className="text-red-500">
+                              {errors.email.message}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -162,6 +182,11 @@ function Checkout() {
                             })}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.phone && (
+                            <p className="text-red-500">
+                              {errors.phone.message}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -181,6 +206,11 @@ function Checkout() {
                             id="street"
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.street && (
+                            <p className="text-red-500">
+                              {errors.street.message}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -200,6 +230,11 @@ function Checkout() {
                             id="city"
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.city && (
+                            <p className="text-red-500">
+                              {errors.city.message}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -219,6 +254,11 @@ function Checkout() {
                             id="state"
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.state && (
+                            <p className="text-red-500">
+                              {errors.state.message}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -238,17 +278,17 @@ function Checkout() {
                             id="pinCode"
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                           />
+                          {errors.pinCode && (
+                            <p className="text-red-500">
+                              {errors.pinCode.message}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="mt-6 flex items-center justify-end gap-x-6">
-                    <button
-                      type="button"
-                      className="text-sm font-semibold leading-6 text-gray-900"
-                    >
-                      Reset
-                    </button>
+                   
                     <button
                       type="submit"
                       className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

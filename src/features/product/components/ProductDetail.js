@@ -50,6 +50,7 @@ export default function ProductDetail() {
     const newItem = { ...product, quantity:1, user:user.id };
     delete newItem['id'];
     dispatch(addToCartAsync(newItem));
+    alert('Added to Cart');
   };
 
   useEffect(() => {
