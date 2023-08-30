@@ -11,7 +11,7 @@ export default function UserProfile() {
   const user = useSelector(selectUserInfo);
   const dispatch = useDispatch();
   const [selectedEditIndex, setSelectedEditIndex] = useState(-1);
-  const [showAddAddress,setShowAddAddress] = useState(false);
+  const [showAddAddress, setShowAddAddress] = useState(false);
 
   const {
     register,
@@ -20,6 +20,15 @@ export default function UserProfile() {
     reset,
     formState: { errors },
   } = useForm();
+
+  const handleAdd = (addedAddress) => {
+    const changeUser = {
+      ...user,
+      addresses: [...user.addresses, addedAddress],
+    };
+    dispatch(updateUserAsync(changeUser));
+    setShowAddAddress(false);
+  };
 
   const handleEditForm = (e, index) => {
     setSelectedEditIndex(index);
@@ -32,13 +41,6 @@ export default function UserProfile() {
     setValue("state", address.state);
     setValue("pinCode", address.pinCode);
   };
-
-
-  const handleAdd = (addedAddress) => {
-    const changeUser = { ...user, addresses: [...user.addresses,addedAddress ]};
-    dispatch(updateUserAsync(changeUser));
-    setShowAddAddress(false);
-  }
 
   const handleEdit = (updatedAddress, index) => {
     const changeUser = { ...user, addresses: [...user.addresses] }; // to not get shallow copy issue
@@ -63,10 +65,23 @@ export default function UserProfile() {
           <h1 className="text-2xl mt-3 my-4 font-bold tracking-tight text-gray-600">
             Email Address: {user.email}
           </h1>
+          <h1 className="text-2xl mt-3 my-4 font-bold tracking-tight text-gray-600">
+            Role: {user.role}
+          </h1>
         </div>
 
         <button
-        onClick={() => {setShowAddAddress(true);setSelectedEditIndex(-1);}}
+          onClick={() => {
+            setShowAddAddress(true);
+            setSelectedEditIndex(-1);
+            setValue("name", "");
+            setValue("email", "");
+            setValue("phone", "");
+            setValue("street", "");
+            setValue("city", " ");
+            setValue("state", "");
+            setValue("pinCode", "");
+          }}
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 my-10 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >

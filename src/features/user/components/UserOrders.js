@@ -82,8 +82,12 @@ function UserOrders() {
                   <p>{order.totalItems} items</p>
                 </div>
                 <div className="flex justify-between text-base font-medium text-gray-900">
+                  <p>Delivery Charges</p>
+                  <p>${order.delivery}</p>
+                </div>
+                <div className="flex justify-between text-base font-medium text-gray-900">
                   <p>Subtotal</p>
-                  <p>${order.totalAmount}</p>
+                  <p>${order.finalAmount}</p>
                 </div>
               </div>
               <p className="mt-0.5 text-base font-medium text-gray-500">

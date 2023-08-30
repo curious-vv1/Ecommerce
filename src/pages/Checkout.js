@@ -30,6 +30,8 @@ function Checkout() {
       amount,
     0
   );
+  const delivery = totalAmount < 100 ? 5 : 0;
+  const finalAmount = totalAmount + delivery;
   const dispatch = useDispatch();
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState("cash");
@@ -48,7 +50,8 @@ function Checkout() {
     if (selectedAddress && paymentMethod) {
       const order = {
         items,
-        totalAmount,
+        delivery,
+        finalAmount,
         totalItems,
         user,
         selectedAddress,
@@ -288,7 +291,6 @@ function Checkout() {
                     </div>
                   </div>
                   <div className="mt-6 flex items-center justify-end gap-x-6">
-                   
                     <button
                       type="submit"
                       className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -471,8 +473,12 @@ function Checkout() {
                   <p>{totalItems} items</p>
                 </div>
                 <div className="flex justify-between text-base font-medium text-gray-900">
+                  <p>Delivery Charges</p>
+                  <p>${delivery}</p>
+                </div>
+                <div className="flex justify-between text-base font-medium text-gray-900">
                   <p>Subtotal</p>
-                  <p>${totalAmount}</p>
+                  <p>${finalAmount}</p>
                 </div>
                 <p className="mt-0.5 text-sm text-gray-500">
                   Shipping and taxes calculated at checkout.

@@ -11,6 +11,7 @@ import { Navigate } from "react-router-dom";
 
 export default function Cart() {
   const items = useSelector(selectItems);
+  
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
   const totalAmount = items.reduce(
     (amount, item) =>
@@ -19,6 +20,8 @@ export default function Cart() {
       amount,
     0
   );
+  const delivery = totalAmount < 100 ? 5 : 0;
+  const finalAmount = totalAmount + delivery;
   const dispatch = useDispatch();
 
   const handleQuantity = (e, item) => {
@@ -105,8 +108,12 @@ export default function Cart() {
             <p>{totalItems} items</p>
           </div>
           <div className="flex justify-between text-base font-medium text-gray-900">
+            <p>Delivery Charges</p>
+            <p>${delivery}</p>
+          </div>
+          <div className="flex justify-between text-base font-medium text-gray-900">
             <p>Subtotal</p>
-            <p>${totalAmount}</p>
+            <p>${finalAmount}</p>
           </div>
           <p className="mt-0.5 text-sm text-gray-500">
             Shipping and taxes calculated at checkout.
