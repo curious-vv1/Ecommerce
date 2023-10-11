@@ -27,7 +27,7 @@ function UserOrders() {
                 Order #{order.id}
               </h1>
               <h1 className="text-xl mt-3 my-9 font-bold tracking-tight text-gray-600">
-                Order Status : {order.status}
+                Order Status : {order.status==='delivered' ? <span className="text-green-600">{order.status}</span> : <span>{order.status}</span>}
               </h1>
               <div className="flow-root">
                 <ul role="list" className="-my-6 divide-y divide-gray-200">

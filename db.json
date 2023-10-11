@@ -1840,6 +1840,25 @@
         "https://i.dummyjson.com/data/products/100/3.jpg",
         "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
       ]
+    },
+    {
+      "title": "tjhdsuf",
+      "description": "dsvsvg dxjsbchsdvfhc dshfuysfg",
+      "brand": "Hemani Tea",
+      "category": "mens-shoes",
+      "price": 54,
+      "discountPercentage": 6,
+      "stock": 6,
+      "thumbnail": "https://i.imgur.com/IKqOAjO.jpg",
+      "images": [
+        "https://i.imgur.com/IKqOAjO.jpg",
+        "https://i.imgur.com/IKqOAjO.jpg",
+        "https://i.imgur.com/IKqOAjO.jpg",
+        "https://i.imgur.com/IKqOAjO.jpg",
+        "https://i.imgur.com/IKqOAjO.jpg"
+      ],
+      "rating": 0,
+      "id": 101
     }
   ],
   "brands": [
@@ -2466,6 +2485,15 @@
           "city": "sabour",
           "state": "Bihar",
           "pinCode": "803210"
+        },
+        {
+          "name": "llllll",
+          "email": "muthu@hotmail.com",
+          "phone": "1254637890",
+          "street": "sabour",
+          "city": "Bhagalpur",
+          "state": "kuchh bhi",
+          "pinCode": "526359"
         }
       ],
       "id": 7,
@@ -2494,6 +2522,40 @@
       "addresses": [],
       "role": "admin",
       "id": 9
+    },
+    {
+      "email": "shubu@gmail.com",
+      "password": "*a3Z+*Pq6w*td67",
+      "addresses": [
+        {
+          "name": "Shivam",
+          "email": "shubu@gmail.com",
+          "phone": "6489984155",
+          "street": "310",
+          "city": "Bhagalpur",
+          "state": "mars",
+          "pinCode": "813210"
+        }
+      ],
+      "role": "user",
+      "id": 10
+    },
+    {
+      "email": "betajisujal@chhod.com",
+      "password": "J7wGZKxUXxSB*j-",
+      "addresses": [
+        {
+          "name": "susu",
+          "email": "betajisujal@chhod.com",
+          "phone": "3952628663",
+          "street": "423",
+          "city": "bhagalpur",
+          "state": "uganda",
+          "pinCode": "4648"
+        }
+      ],
+      "role": "user",
+      "id": 11
     }
   ],
   "cart": [
@@ -2518,6 +2580,88 @@
       "quantity": 1,
       "user": 3,
       "id": 1
+    },
+    {
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "images": [
+        "https://i.dummyjson.com/data/products/6/1.png",
+        "https://i.dummyjson.com/data/products/6/2.jpg",
+        "https://i.dummyjson.com/data/products/6/3.png",
+        "https://i.dummyjson.com/data/products/6/4.jpg"
+      ],
+      "productId": 6,
+      "quantity": 1,
+      "user": 3,
+      "id": 2
+    },
+    {
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ],
+      "productId": 3,
+      "quantity": 1,
+      "user": 7,
+      "id": 3
+    },
+    {
+      "title": "Huawei P30",
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "price": 499,
+      "discountPercentage": 10.58,
+      "rating": 4.09,
+      "stock": 32,
+      "brand": "Huawei",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/5/1.jpg",
+        "https://i.dummyjson.com/data/products/5/2.jpg",
+        "https://i.dummyjson.com/data/products/5/3.jpg"
+      ],
+      "productId": 5,
+      "quantity": 1,
+      "user": 3,
+      "id": 4
+    },
+    {
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/1/1.jpg",
+        "https://i.dummyjson.com/data/products/1/2.jpg",
+        "https://i.dummyjson.com/data/products/1/3.jpg",
+        "https://i.dummyjson.com/data/products/1/4.jpg",
+        "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+      ],
+      "deleted": true,
+      "productId": 1,
+      "quantity": 1,
+      "user": 11,
+      "id": 5
     }
   ],
   "orders": [
@@ -2723,7 +2867,7 @@
         "pinCode": "803210"
       },
       "paymentMethod": "card",
-      "status": "pending",
+      "status": "dispatched",
       "id": 3
     },
     {
@@ -2817,6 +2961,208 @@
       "paymentMethod": "cash",
       "status": "pending",
       "id": 4
+    },
+    {
+      "items": [
+        {
+          "title": "OPPOF19",
+          "description": "OPPO F19 is officially announced on April 2021.",
+          "price": 280,
+          "discountPercentage": 17.91,
+          "rating": 4.3,
+          "stock": 123,
+          "brand": "OPPO",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/4/1.jpg",
+            "https://i.dummyjson.com/data/products/4/2.jpg",
+            "https://i.dummyjson.com/data/products/4/3.jpg",
+            "https://i.dummyjson.com/data/products/4/4.jpg",
+            "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+          ],
+          "productId": 4,
+          "quantity": 3,
+          "user": 7,
+          "id": 3
+        }
+      ],
+      "delivery": 0,
+      "finalAmount": 690,
+      "totalItems": 3,
+      "user": {
+        "email": "anku@hotmail.com",
+        "password": "fE7.!bMYDurRcz+",
+        "addresses": [
+          {
+            "name": "llllll",
+            "email": "anku@hotmail.com",
+            "phone": "9876543210",
+            "street": "318",
+            "city": "sabour",
+            "state": "Bihar",
+            "pinCode": "803210"
+          },
+          {
+            "name": "llllll",
+            "email": "muthu@hotmail.com",
+            "phone": "1254637890",
+            "street": "sabour",
+            "city": "Bhagalpur",
+            "state": "kuchh bhi",
+            "pinCode": "526359"
+          }
+        ],
+        "id": 7,
+        "role": "user"
+      },
+      "selectedAddress": {
+        "name": "llllll",
+        "email": "muthu@hotmail.com",
+        "phone": "1254637890",
+        "street": "sabour",
+        "city": "Bhagalpur",
+        "state": "kuchh bhi",
+        "pinCode": "526359"
+      },
+      "paymentMethod": "cash",
+      "status": "cancelled",
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "title": "half sleeves T shirts",
+          "description": "Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands",
+          "price": 23,
+          "discountPercentage": 12.76,
+          "rating": 4.26,
+          "stock": 132,
+          "brand": "Vintage Apparel",
+          "category": "mens-shirts",
+          "thumbnail": "https://i.dummyjson.com/data/products/51/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/51/1.png",
+            "https://i.dummyjson.com/data/products/51/2.jpg",
+            "https://i.dummyjson.com/data/products/51/3.jpg",
+            "https://i.dummyjson.com/data/products/51/thumbnail.jpg"
+          ],
+          "productId": 51,
+          "quantity": 1,
+          "user": 10,
+          "id": 4
+        }
+      ],
+      "delivery": 5,
+      "finalAmount": 25,
+      "totalItems": 1,
+      "user": {
+        "email": "shubu@gmail.com",
+        "password": "*a3Z+*Pq6w*td67",
+        "addresses": [
+          {
+            "name": "Shivam",
+            "email": "shubu@gmail.com",
+            "phone": "6489984155",
+            "street": "310",
+            "city": "Bhagalpur",
+            "state": "mars",
+            "pinCode": "813210"
+          }
+        ],
+        "role": "user",
+        "id": 10
+      },
+      "selectedAddress": {
+        "name": "Shivam",
+        "email": "shubu@gmail.com",
+        "phone": "6489984155",
+        "street": "310",
+        "city": "Bhagalpur",
+        "state": "mars",
+        "pinCode": "813210"
+      },
+      "paymentMethod": "cash",
+      "status": "delivered",
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "title": "Leather Straps Wristwatch",
+          "description": "Style:Sport ,Clasp:Buckles ,Water Resistance Depth:3Bar",
+          "price": 120,
+          "discountPercentage": 7.14,
+          "rating": 4.63,
+          "stock": 91,
+          "brand": "Naviforce",
+          "category": "mens-watches",
+          "thumbnail": "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/61/1.jpg",
+            "https://i.dummyjson.com/data/products/61/2.png",
+            "https://i.dummyjson.com/data/products/61/3.jpg"
+          ],
+          "productId": 61,
+          "quantity": 1,
+          "user": 11,
+          "id": 5
+        },
+        {
+          "title": "cereals muesli fruit nuts",
+          "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
+          "price": 46,
+          "discountPercentage": 16.8,
+          "rating": 4.94,
+          "stock": 113,
+          "brand": "fauji",
+          "category": "groceries",
+          "thumbnail": "https://i.dummyjson.com/data/products/24/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/24/1.jpg",
+            "https://i.dummyjson.com/data/products/24/2.jpg",
+            "https://i.dummyjson.com/data/products/24/3.jpg",
+            "https://i.dummyjson.com/data/products/24/4.jpg",
+            "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
+          ],
+          "productId": 24,
+          "quantity": 1,
+          "user": 11,
+          "id": 6
+        }
+      ],
+      "delivery": 0,
+      "finalAmount": 149,
+      "totalItems": 2,
+      "user": {
+        "email": "betajisujal@chhod.com",
+        "password": "J7wGZKxUXxSB*j-",
+        "addresses": [
+          {
+            "name": "susu",
+            "email": "betajisujal@chhod.com",
+            "phone": "3952628663",
+            "street": "423",
+            "city": "bhagalpur",
+            "state": "uganda",
+            "pinCode": "4648"
+          }
+        ],
+        "role": "user",
+        "id": 11
+      },
+      "selectedAddress": {
+        "name": "susu",
+        "email": "betajisujal@chhod.com",
+        "phone": "3952628663",
+        "street": "423",
+        "city": "bhagalpur",
+        "state": "uganda",
+        "pinCode": "4648"
+      },
+      "paymentMethod": "cash",
+      "status": "delivered",
+      "id": 7
     }
   ]
 }

@@ -16,14 +16,18 @@ export default function Login() {
 
   console.log(errors);
 
+  console.log("User Role:", user ? user.role : "No user");
+
   return (
     <>
+      
       {user && user.role === "admin" && (
         <Navigate to="/admin" replace={true}></Navigate>
       )}
       {user && user.role === "user" && (
         <Navigate to="/" replace={true}></Navigate>
       )}
+      {/* {user && <Navigate to='/' replace={true}></Navigate>} */}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -48,7 +52,7 @@ export default function Login() {
                   addresses: [],
                 })
               );
-              console.log(data);
+              // console.log(data);
             })}
           >
             <div>
